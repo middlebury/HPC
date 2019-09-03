@@ -70,21 +70,25 @@ def main():
         else:
             s_max = s_min + delta_s - 1
 
-    # Factor the numbers
-    all_factors = []
-    for number in numbers[s_min:s_max+1]:
-        all_factors.append(primeFactors(number))    
-
-    # Write factors to disk
+    # Open output file
     if args.out is not None:
         out_file = open(args.out ,'w')
-        for factors in all_factors:
-            np.savetxt(out_file, np.resize(np.array(factors), 
-                       (1, len(factors))), fmt='%i')
-        out_file.close()
-    else:
-        for factors in all_factors:
+    
+    # Factor the numbers
+    for number in numbers[s_min:s_max+1]:
+        factors = primeFactors(number)    
+
+        # Write factors to disk
+        if args.out is not None:
+            np.savetxt(out_file, np.resize(np.array(factors),
+                                        (1, len(factors))), fmt='%i')
+        else:
             print factors
+    
+    # Close output file 
+    if args.out is not None:
+        out_file.close()
+         
 # ----------------------------------------------------------------------
 # ----------------------------------------------------------------------
 if __name__ == "__main__":
