@@ -3,14 +3,14 @@
 
 # Set SLURM options
 #SBATCH --job-name=array_factor                 # Job name
-#SBATCH --output=array_factors-%A-%a.out        # Standard output and error log
+#SBATCH --output=array_factor-%A-%a.out        # Standard output and error log
 #SBATCH --mail-user=username@middlebury.edu     # Where to send mail	
 #SBATCH --mail-type=NONE                        # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --cpus-per-task=1                       # Run on a single core
+#SBATCH --cpus-per-task=1                       # Run each array job on a single core
 #SBATCH --mem=2gb                               # Job memory request
 #SBATCH --partition=standard                    # Partition (queue) 
 #SBATCH --time=00:15:00                         # Time limit hrs:min:sec
-#SBATCH --array=0-9                             # Array range
+#SBATCH --array=0-9                             # Array range: stets number of array jobs
 
 # print SLURM envirionment variables
 echo "Job ID: ${SLURM_JOB_ID}"
