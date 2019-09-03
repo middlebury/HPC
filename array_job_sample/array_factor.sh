@@ -16,12 +16,10 @@
 echo "Job ID: ${SLURM_JOB_ID}"
 echo "Array ID: ${SLURM_ARRAY_TASK_ID}"
 echo "Node: ${SLURMD_NODENAME}"
-echo "Core: "`core`
 echo "Starting: "`date +"%D %T"`
 
 # Your calculations here
 python factor_list.py sample_list_16.dat -N ${SLURM_ARRAY_TASK_COUNT} -i ${SLURM_ARRAY_TASK_ID} -o array_factors_out-${SLURM_ARRAY_TASK_ID}.dat
 
 # End of job info
-echo "Core: "`core`
 echo "Ending:   "`date +"%D %T"`
