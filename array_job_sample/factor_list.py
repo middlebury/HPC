@@ -80,10 +80,11 @@ def main():
 
         # Write factors to disk
         if args.out is not None:
-            np.savetxt(out_file, np.resize(np.array(factors),
-                                        (1, len(factors))), fmt='%i')
+            np.savetxt(out_file, 
+                       np.resize(np.array(factors, dtype=np.uint64),
+                       (1, len(factors))), fmt='%i')
         else:
-            print factors
+            print (np.array(factors, dtype=int)).tolist()
     
     # Close output file 
     if args.out is not None:
