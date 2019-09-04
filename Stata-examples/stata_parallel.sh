@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# slurm template for serial jobs
+# slurm template for parallel jobs
 
 # Set SLURM options
 #SBATCH --job-name=stataex                     	# Job name
