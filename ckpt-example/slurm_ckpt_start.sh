@@ -20,8 +20,8 @@ printf "\nHello world from ${SLURMD_NODENAME}!\n"
 
 # Runs the command "count" through the dmtcp checkpointing tool
 # ** -i 10: sets the checkpointing interval to 10 seconds
-# ** timeout 25: kills the procoess after 25 seconds
-timeout 25 dmtcp_launch --no-coordinator -i 10 ./count 
+# ** timeout 15: kills the procoess after 15 seconds
+timeout 15 dmtcp_launch --no-coordinator -i 10 ./count 
 
 # End of job info
 echo -e "\n\nEnding:   "`date +"%D %T"`

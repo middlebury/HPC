@@ -20,9 +20,9 @@ printf "\nHello world from ${SLURMD_NODENAME}!\n"
 
 # Resrart the previously checkpointed job via the dmtcp checkpointing tool
 # ** -i 10: sets the checkpointing interval to 10 seconds
-# ** timeout 25: kills the procoess after 25 seconds
+# ** timeout 15: kills the procoess after 15 seconds
 # ** ckpt_*.dmtcp: the dmtcp checkpointing files for job to restart
-timeout 25 dmtcp_restart -i 10 ckpt_*.dmtcp
+timeout 15 dmtcp_restart -i 10 ckpt_*.dmtcp
 
 # End of job info
 echo -e "\n\nEnding:   "`date +"%D %T"`
