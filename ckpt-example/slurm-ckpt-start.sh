@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# slurm script checkpointing restart example using dmtcp
+# slurm script checkpointing example using dmtcp
 
 # Set SLURM options
-#SBATCH --job-name=ckpt_restart_test           # Job name
-#SBATCH --output=ckpt_restart_test-%j.out       # Standard output and error log
+#SBATCH --job-name=ckpt-start-sample            # Job name
+#SBATCH --output=ckpt-start-sample-%j.out       # Standard output and error log
 #SBATCH --mail-user=username@middlebury.edu     # Where to send mail	
 #SBATCH --mail-type=NONE                        # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mem=100mb                             # Job memory request
@@ -18,11 +18,11 @@ echo "Starting: "`date +"%D %T"`
 # Your calculations here
 printf "\nHello world from ${SLURMD_NODENAME}!\n"
 
-# Resrart the previously checkpointed job via the dmtcp checkpointing tool
+# Runs the command "count" through the dmtcp checkpointing tool
 # ** -i 10: sets the checkpointing interval to 10 seconds
 # ** timeout 15: kills the procoess after 15 seconds
-# ** ckpt_*.dmtcp: the dmtcp checkpointing files for job to restart
-timeout 15 dmtcp_restart -i 10 ckpt_*.dmtcp
+# ** we suggest you always use the --no-coordinator -p 0 options
+timeout 15 dmtcp_launch --no-coordinator -p 0 -i 10 ./count 
 
 # End of job info
 echo -e "\n\nEnding:   "`date +"%D %T"`
