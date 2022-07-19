@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # factor_list.py
 # 
 # Get the prime factors of a list of integers supplied in an input file
@@ -84,7 +84,7 @@ def main():
                        np.resize(np.array(factors, dtype=np.uint64),
                        (1, len(factors))), fmt='%i')
         else:
-            print (np.array(factors, dtype=int)).tolist()
+            print( (np.array(factors, dtype=int)).tolist() )
     
     # Close output file 
     if args.out is not None:
