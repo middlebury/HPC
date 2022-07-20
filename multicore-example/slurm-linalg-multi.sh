@@ -17,9 +17,6 @@ echo "Node: ${SLURMD_NODENAME}"
 echo "CPUs: ${SLURM_CPUS_ON_NODE}"
 echo "Starting: "`date +"%D %T"`
 
-# Module node currenlty visible on node--need to hardcode path
-#module load python/anaconda2
-
 # Your calculations here
 printf "\nHello world from ${SLURMD_NODENAME}!\n\n"
 
