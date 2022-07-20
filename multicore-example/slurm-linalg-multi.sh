@@ -23,7 +23,7 @@ echo "Starting: "`date +"%D %T"`
 # Your calculations here
 printf "\nHello world from ${SLURMD_NODENAME}!\n\n"
 
-/opt/anaconda2/bin/python linalg_benchmark.py
+python linalg_benchmark.py
 
 # End of job info
 echo -e "\nEnding:   "`date +"%D %T"`
