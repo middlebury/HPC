@@ -2,7 +2,7 @@
 # slurm template for serial jobs
 
 # Set SLURM options
-#SBATCH --job-name=linalg-single                # Job name
+#SBATCH --job-name=mtbench-serial				# Job name
 #SBATCH --output=linalg-single-%j.out           # Standard output and error log
 #SBATCH --mail-user=username@middlebury.edu     # Where to send mail	
 #SBATCH --mail-type=NONE                        # Mail events (NONE, BEGIN, END, FAIL, ALL)

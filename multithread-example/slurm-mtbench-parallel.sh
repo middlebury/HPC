@@ -2,12 +2,12 @@
 # slurm template for serial jobs
 
 # Set SLURM options
-#SBATCH --job-name=linalg-single                # Job name
+#SBATCH --job-name=mtbench-parallel             # Job name
 #SBATCH --output=linalg-single-%j.out           # Standard output and error log
 #SBATCH --mail-user=username@middlebury.edu     # Where to send mail	
 #SBATCH --mail-type=NONE                        # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mem=2gb                               # Job memory request
-#SBATCH --cpus-per-task=16                       # Number of CPU cores
+#SBATCH --cpus-per-task=16                      # Number of CPU cores
 #SBATCH --partition=standard                    # Partition (queue) 
 #SBATCH --time=00:05:00                         # Time limit hrs:min:sec
 
